@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // boucle qui peremet de créer plusieurs boutons
+        function afficheBtn(){
+            console.log(event.target.innerHTML);
+        }
+
+        for(let i=0; i<10; i++){
+            let btn=document.createElement("button");
+            btn.innerHTML=i;
+           // btn.addEventListener("click", function(){
+           //     console.log(this.innerHTML);
+           // });
+            btn.addEventListener("click", afficheBtn);
+            document.body.appendChild(btn);
+
+            let saut=document.createElement("br");
+            if(i%3==0){
+                document.body.appendChild(saut)
+            }
+        }
+    </script>
+</body>
+</html>
